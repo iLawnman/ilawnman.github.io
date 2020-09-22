@@ -22,7 +22,11 @@
         <div id="unity-build-title">SeaBattle3D</div>
       </div>
     </div>
-    <script src="UnityLoader.js"></script>
+    <script src="/Build/UnityLoader.js"></script>
+    <script>
+    var unityInstance = UnityLoader.instantiate("unityContainer", "/Build/");
+    </script>
+    <div id="unityContainer" style="width: 1080px; height: 600px; margin: auto"></div>
     <script>
       var buildUrl = "Build";
       var loaderUrl = buildUrl + "/seabattle3d.loader.js";
