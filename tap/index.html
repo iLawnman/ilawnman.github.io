@@ -57,10 +57,10 @@
           progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
           loadingBar.style.display = "none";
-          var gameInstance = unityInstance;
-          // fullscreenButton.onclick = () => {
-          //   unityInstance.SetFullscreen(1);
-          // };
+          fullscreenButton.onclick = () => {
+            unityInstance.SetFullscreen(1);
+            unityInstance.SendMessage('BattleScene', 'ReceivedBrowserData', 0);
+          };
         }).catch((message) => {
           alert(message);
         });
@@ -76,10 +76,10 @@
         {  
           case -90:
           case 90:
-          gameInstance.SendMessage('BattleScene', 'ReceivedBrowserData', 0);
+          body.unityInstance.SendMessage('BattleScene', 'ReceivedBrowserData', 0);
            break; 
           default:
-          gameInstance.SendMessage('BattleScene', 'ReceivedBrowserData', 1);
+          body.unityInstance.SendMessage('BattleScene', 'ReceivedBrowserData', 1);
             break;  
         }
       }
