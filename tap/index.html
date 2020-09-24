@@ -73,19 +73,15 @@
     {  
       case -90:
       case 90:
-        alert('landscape');
+      unityInstance.SendMessage('BattleScene', 'ReceivedBrowserData', 0);
         break; 
       default:
-        alert('portrait');
+      unityInstance.SendMessage('BattleScene', 'ReceivedBrowserData', 1);
         break; 
     }
   }
  
   window.addEventListener('orientationchange', doOnOrientationChange);
- 
-  window.onorientationchange = function(event) { 
-      console.log("the orientation of the device is now " + event.target.screen.orientation.angle);
-      unityInstance.SendMessage('BattleScene', 'ReceivedBrowserData', event.target.screen.orientation.angle);
   }
   // Initial execution if needed
   doOnOrientationChange();
