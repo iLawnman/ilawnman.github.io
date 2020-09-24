@@ -6,18 +6,10 @@
     <title>Unity WebGL Player | SeaBattle3D</title>
   </head>
   <body style="text-align: center">
-    <!-- <canvas id="unity-canvas" style="width: 100%; height: 100%; background: #231F20"></canvas> -->
-    <canvas id="canvas" height="960px" width="600px"></canvas>
+    <canvas id="unity-canvas" style="width: 100%; height: 100%; background: #231F20"></canvas>
     
 <script>
-    var canvas = document.getElementById('unity-canvas');
-    var ratio = canvas.width / canvas.height;
-   
-    canvas.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-    canvas.width = canvas.height * ratio;
- 
-    canvas.style.position = "absolute";
-    canvas.style.left = ((window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth) / 2 - canvas.width / 2) + "px";      
+    
   </script>
     <script src="Build/tap.loader.js"></script>
     <script>
@@ -49,20 +41,20 @@
                 break;  
               }
             }
+            handleResize();
           }
           window.addEventListener('orientationchange', doOnOrientationChange);
           doOnOrientationChange();
 
           function handleResize() {
-          var windowWidth = window.innerWidth;
-          var windowHeight = window.innerHeight;
-          console.log("window.innerHeight "+window.innerHeight);
-
-        gameCanvas = ocument.getElementById('unity-canvas');
-        if(gameCanvas != null) {
-        var canvasSize = getCanvasSize();
-        gameCanvas.width = canvasSize.width;
-        gameCanvas.height = canvasSize.height;
+            var canvas = document.getElementById('unity-canvas');
+    var ratio = canvas.width / canvas.height;
+   
+    canvas.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    canvas.width = canvas.height * ratio;
+ 
+    canvas.style.position = "absolute";
+    canvas.style.left = ((window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth) / 2 - canvas.width / 2) + "px";      
     }
 
     gameContainer.style.height = windowHeight+"px";
