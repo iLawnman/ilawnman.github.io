@@ -57,6 +57,7 @@
           progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
           loadingBar.style.display = "none";
+          window.unityInstance = unityInstance;
           // fullscreenButton.onclick = () => {
           //   unityInstance.SetFullscreen(1);
           // };
@@ -72,10 +73,10 @@
         {  
           case -90:
           case 90:
-          window.unityInstance.SendMessage('BattleScene', 'ReceivedBrowserData', 0);
+          unityInstance.SendMessage('BattleScene', 'ReceivedBrowserData', 0);
            break; 
           default:
-          window.unityInstance.SendMessage('BattleScene', 'ReceivedBrowserData', 1);
+          unityInstance.SendMessage('BattleScene', 'ReceivedBrowserData', 1);
             break;  
         }
       }
