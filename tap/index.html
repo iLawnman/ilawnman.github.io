@@ -66,18 +66,16 @@
       };
       document.body.appendChild(script);
       
-      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/tap.json");
-
       function doOnOrientationChange()
       {
         switch(window.orientation) 
         {  
           case -90:
           case 90:
-          unityInstance.SendMessage('BattleScene', 'ReceivedBrowserData', 0);
+          window.unityInstance.SendMessage('BattleScene', 'ReceivedBrowserData', 0);
            break; 
           default:
-          unityInstance.SendMessage('BattleScene', 'ReceivedBrowserData', 1);
+          window.unityInstance.SendMessage('BattleScene', 'ReceivedBrowserData', 1);
             break;  
         }
       }
