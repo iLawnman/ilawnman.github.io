@@ -22,17 +22,17 @@
       }).then((ui) => {
           unityInstance = ui;
         });
-           
+          
           function doOnOrientationChange()
           {
             switch(window.orientation) 
             {  
               case -90:
               case 90:
-              unityInstance.Module.SendMessage('BattleScene', 'ReceivedBrowserData', 0);
+              unityInstance.SendMessage('BattleScene', 'ReceivedBrowserData', 0);
                break; 
               default:
-              unityInstance.Module.SendMessage('BattleScene', 'ReceivedBrowserData', 1);
+              unityInstance.SendMessage('BattleScene', 'ReceivedBrowserData', 1);
                 break;  
             }
           }
