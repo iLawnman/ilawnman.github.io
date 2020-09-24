@@ -6,7 +6,7 @@
     <title>Unity WebGL Player | SeaBattle3D</title>
   </head>
   <body style="text-align: center">
-    <canvas id="unity-canvas" style="width: 100%; height: 100%; background: #231F20"></canvas>
+    <canvas id="unity-canvas" style="width: 600px; height: 300px; background: #231F20"></canvas>
     <script src="Build/tap.loader.js"></script>
     <script>
 
@@ -30,14 +30,14 @@
               case -90:
               case 90: {
               unityInstance.SendMessage('BattleScene', 'ReceivedBrowserData', 0);
-               document.getElementById('unity-canvas').clientHeight =200;
-               document.getElementById('unity-canvas').clientWidth = 400;
+               document.getElementById('unity-canvas').clientHeight =300;
+               document.getElementById('unity-canvas').clientWidth = 600;
                break; 
               }
               default: {
               unityInstance.SendMessage('BattleScene', 'ReceivedBrowserData', 1);
-               document.getElementById('unity-canvas').clientHeight =400;
-               document.getElementById('unity-canvas').clientWidth = 200;
+               document.getElementById('unity-canvas').clientHeight =600;
+               document.getElementById('unity-canvas').clientWidth = 300;
                 break;  
               }
             }
