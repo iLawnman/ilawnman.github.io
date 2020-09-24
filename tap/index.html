@@ -40,6 +40,7 @@
       var loadingBar = document.querySelector("#unity-loading-bar");
       var progressBarFull = document.querySelector("#unity-progress-bar-full");
       var fullscreenButton = document.querySelector("#unity-fullscreen-button");
+      var unityInstance;
 
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         container.className = "unity-mobile";
@@ -55,7 +56,7 @@
       script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
           progressBarFull.style.width = 100 * progress + "%";
-        }).then((unityInstance) => {
+        }).then((unityInstance = unityInstance) => {
           loadingBar.style.display = "none";
           // fullscreenButton.onclick = () => {
           //   unityInstance.SetFullscreen(1);
@@ -66,7 +67,7 @@
       };
       document.body.appendChild(script);
       
-      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/tap.loader.json", {onProgress: UnityProgress});
+      //var unityInstance = UnityLoader.instantiate("unityContainer", "Build/", {onProgress: UnityProgress});
 
       function doOnOrientationChange()
       {
