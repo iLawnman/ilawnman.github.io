@@ -82,6 +82,11 @@
   }
  
   window.addEventListener('orientationchange', doOnOrientationChange);
+ 
+  window.onorientationchange = function(event) { 
+      console.log("the orientation of the device is now " + event.target.screen.orientation.angle);
+      alert(event.target.screen.orientation.angle);
+      unityInstance.SendMessage('BattleScene', 'ReceivedBrowserData', event.target.screen.orientation.angle);
   }
   // Initial execution if needed
   doOnOrientationChange();
