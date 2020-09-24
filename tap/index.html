@@ -11,7 +11,7 @@
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas"></canvas>
       <div id="unity-loading-bar">
-        <!-- <div id="unity-logo"></div> -->
+        <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
           <div id="unity-progress-bar-full"></div>
         </div>
@@ -57,20 +57,18 @@
           progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
           loadingBar.style.display = "none";
-          fullscreenButton.onclick = () => {
-            unityInstance.SetFullscreen(1);
-          };
+          // fullscreenButton.onclick = () => {
+          //   unityInstance.SetFullscreen(1);
+          // };
         }).catch((message) => {
           alert(message);
         });
       };
+      // window.onorientationchange = function(event) { 
+      // console.log("the orientation of the device is now " + event.target.screen.orientation.angle);
+      // unityInstance.SendMessage('MobileController', 'ReceivedBrowserData', event.target.screen.orientation.angle);
+      // };
       document.body.appendChild(script);
-    </script>
-    <script>
-       window.onorientationchange = function(event) { 
-      console.log("the orientation of the device is now " + event.target.screen.orientation.angle);
-      unityInstance.SendMessage('MobileController', 'ReceivedBrowserData', event.target.screen.orientation.angle);
-      };
     </script>
   </body>
 </html>
