@@ -30,14 +30,13 @@
               case -90:
               case 90: {
               unityInstance.SendMessage('BattleScene', 'ReceivedBrowserData', 0);
-               document.getElementById('unity-canvas').width = 200;
-              document.getElementById('unity-canvas').height = 400;
+               <canvas id="unity-canvas" width="100" height="150"></canvas>
                break; 
               }
               default: {
               unityInstance.SendMessage('BattleScene', 'ReceivedBrowserData', 1);
-              document.getElementById('unity-canvas').height = 200;
-              document.getElementById('unity-canvas').width = 400;
+              // document.getElementById('unity-canvas').height = 200;
+              // document.getElementById('unity-canvas').width = 400;
                 break;  
               }
             }
