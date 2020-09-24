@@ -30,7 +30,9 @@
               case -90:
               case 90: {
               unityInstance.SendMessage('BattleScene', 'ReceivedBrowserData', 0);
-               <canvas id="unity-canvas" width="100" height="150"></canvas>
+               var canv = document.getElementById('unity-canvas');
+               canvas.height = 100;
+               canvas.width = 100;
                break; 
               }
               default: {
