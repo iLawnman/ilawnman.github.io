@@ -66,7 +66,7 @@
       };
       window.onorientationchange = function(event) { 
       console.log("the orientation of the device is now " + event.target.screen.orientation.angle);
-      unityInstance.SendMessage('MobileController', 'ReceivedBrowserData', event.target.screen.orientation.angle);
+      unityInstance.SendMessage('MobileController', 'ReceivedBrowserData', 100);
       };
       document.body.appendChild(script);
     </script>
