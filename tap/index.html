@@ -30,22 +30,37 @@
               case -90:
               case 90: {
               unityInstance.SendMessage('BattleScene', 'ReceivedBrowserData', 0);
-               document.getElementById('unity-canvas').height =300;
-               document.getElementById('unity-canvas').width = 600;
+               //document.getElementById('unity-canvas').height =300;
+               //document.getElementById('unity-canvas').width = 600;
+               handleResize();
                break; 
               }
               default: {
               unityInstance.SendMessage('BattleScene', 'ReceivedBrowserData', 1);
                //document.getElementById('unity-canvas').height =600;
                //document.getElementById('unity-canvas').width = 300;
+               handleResize();
                 break;  
               }
             }
           }
           window.addEventListener('orientationchange', doOnOrientationChange);
-         
-          // Initial execution if needed
           doOnOrientationChange();
+
+          function handleResize() {
+          var windowWidth = window.innerWidth;
+          var windowHeight = window.innerHeight;
+          console.log("window.innerHeight "+window.innerHeight);
+
+        gameCanvas = ocument.getElementById('unity-canvas');
+        if(gameCanvas != null) {
+        var canvasSize = getCanvasSize();
+        gameCanvas.width = canvasSize.width;
+        gameCanvas.height = canvasSize.height;
+    }
+
+    gameContainer.style.height = windowHeight+"px";
+    }
         </script>
   </body>
 </html>
