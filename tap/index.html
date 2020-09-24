@@ -64,11 +64,27 @@
           alert(message);
         });
       };
-      window.onorientationchange = function(event) { 
-      console.log("the orientation of the device is now " + event.target.screen.orientation.angle);
-      unityInstance.SendMessage('BattleScene', 'ReceivedBrowserData', event.target.screen.orientation.angle);
-      };
       document.body.appendChild(script);
+    </script>
+    <script>           
+      function doOnOrientationChange()
+      {
+        switch(window.orientation) 
+        {  
+          case -90:
+          case 90:
+          unityInstance.SendMessage('BattleScene', 'ReceivedBrowserData', 0);
+           break; 
+          default:
+          unityInstance.SendMessage('BattleScene', 'ReceivedBrowserData', 1);
+            break;  
+        }
+      }
+     
+      window.addEventListener('orientationchange', doOnOrientationChange);
+     
+      // Initial execution if needed
+      doOnOrientationChange();
     </script>
   </body>
 </html>
