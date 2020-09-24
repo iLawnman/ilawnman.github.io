@@ -64,11 +64,13 @@
           alert(message);
         });
       };
-      window.onorientationchange = function(event) { 
+      document.body.appendChild(script);
+    </script>
+    <script>
+       window.onorientationchange = function(event) { 
       console.log("the orientation of the device is now " + event.target.screen.orientation.angle);
       unityInstance.SendMessage('MobileController', 'ReceivedBrowserData', event.target.screen.orientation.angle);
       };
-      document.body.appendChild(script);
     </script>
   </body>
 </html>
