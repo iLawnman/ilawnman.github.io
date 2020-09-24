@@ -1,11 +1,7 @@
-body {     margin: 0px;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;}
-#unity-container { 
-    justify-content: center;
+body {  justify-content: center;
+    align-items: center;
+    display: flex; }
+#unity-container {  justify-content: center;
     align-items: center;
     display: flex;}
 #unity-container.unity-desktop { left: 50%; top: 50%; transform: translate(-50%, -50%) }
