@@ -51,11 +51,13 @@
       loadingBar.style.display = "block";
 
       var script = document.createElement("script");
+      var unityInstance;
       script.src = loaderUrl;
       script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
           progressBarFull.style.width = 100 * progress + "%";
-        }).then((unityInstance) => {
+        }).then((ui) => {
+          unityInstance = ui;
           loadingBar.style.display = "none";
           fullscreenButton.onclick = () => {
             unityInstance.SetFullscreen(1);
@@ -65,6 +67,23 @@
         });
       };
       document.body.appendChild(script);
+
+      function doOnOrientationChange()
+      {
+        switch(window.orientation) 
+        {  
+          case -90:
+          case 90:
+          unityInstance.SendMessage('BattleScene', 'ReceivedBrowserData', 0);
+           break; 
+          default:
+          unityInstance.SendMessage('BattleScene', 'ReceivedBrowserData', 1);
+            break;  
+        }
+      }
+     
+      window.addEventListener('orientationchange', doOnOrientationChange);
+     
     </script>
   </body>
 </html>
