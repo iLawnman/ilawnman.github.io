@@ -68,16 +68,19 @@
       };
       document.body.appendChild(script);
 
+      doOnOrientationChange(); // start init
+
+      //send device rotation to unity
       function doOnOrientationChange()
       {
         switch(window.orientation) 
         {  
           case -90:
           case 90:
-          unityInstance.SendMessage('BattleScene', 'ReceivedBrowserData', 1);
+          unityInstance.SendMessage('BattleScene', 'ReceivedBrowserData', 0);
            break; 
           default:
-          unityInstance.SendMessage('BattleScene', 'ReceivedBrowserData', 0);
+          unityInstance.SendMessage('BattleScene', 'ReceivedBrowserData', 1);
             break;  
         }
       }
