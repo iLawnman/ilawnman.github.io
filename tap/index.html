@@ -68,7 +68,6 @@
       };
       document.body.appendChild(script);
 
-
       //send device rotation to unity
       function doOnOrientationChange()
       {
@@ -84,10 +83,10 @@
         }
       }
      
-      doOnOrientationChange(); // start init
-
       window.addEventListener('orientationchange', doOnOrientationChange);
      
+      doOnOrientationChange(); // start init
+
     </script>
   </body>
 </html>
