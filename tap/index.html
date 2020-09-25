@@ -74,10 +74,10 @@
         {  
           case -90:
           case 90:
-          unityInstance.SendMessage('BattleScene', 'ReceivedBrowserData', 0);
+          unityInstance.SendMessage('BattleScene', 'ReceivedBrowserData', 1);
            break; 
           default:
-          unityInstance.SendMessage('BattleScene', 'ReceivedBrowserData', 1);
+          unityInstance.SendMessage('BattleScene', 'ReceivedBrowserData', 0);
             break;  
         }
       }
