@@ -24,11 +24,11 @@
     </div>
     <script>
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/seabattle3d.loader.js";
+      var loaderUrl = buildUrl + "/seabattle.loader.js";
       var config = {
-        dataUrl: buildUrl + "/seabattle3d.data",
-        frameworkUrl: buildUrl + "/seabattle3d.framework.js",
-        codeUrl: buildUrl + "/seabattle3d.wasm",
+        dataUrl: buildUrl + "/seabattle.data",
+        frameworkUrl: buildUrl + "/seabattle.framework.js",
+        codeUrl: buildUrl + "/seabattle.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "iLawn",
         productName: "SeaBattle3D",
@@ -46,7 +46,7 @@
         config.devicePixelRatio = 1;
       } else {
         canvas.style.width = "1080px";
-        canvas.style.height = "600px";
+        canvas.style.height = "640px";
       }
       loadingBar.style.display = "block";
 
