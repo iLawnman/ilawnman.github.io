@@ -18,6 +18,7 @@
         <div id="unity-progress-bar-full"></div>
       </div>
     </div>
+<<<<<<< HEAD
     <div id="unity-footer">
       <div id="unity-webgl-logo"></div>
       <div id="unity-fullscreen-button"></div>
@@ -42,6 +43,20 @@
     var loadingBar = document.querySelector("#unity-loading-bar");
     var progressBarFull = document.querySelector("#unity-progress-bar-full");
     var fullscreenButton = document.querySelector("#unity-fullscreen-button");
+=======
+    <script>
+      var buildUrl = "Build";
+      var loaderUrl = buildUrl + "/seabattle.loader.js";
+      var config = {
+        dataUrl: buildUrl + "/seabattle.data",
+        frameworkUrl: buildUrl + "/seabattle.framework.js",
+        codeUrl: buildUrl + "/seabattle.wasm",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "iLawn",
+        productName: "SeaBattle3D",
+        productVersion: "0.1",
+      };
+>>>>>>> fc7d898bed34adf41d09812e2747add5c145abf5
 
     if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
       container.className = "unity-mobile";
@@ -52,6 +67,7 @@
     }
     loadingBar.style.display = "block";
 
+<<<<<<< HEAD
     var script = document.createElement("script");
     script.src = loaderUrl;
     script.onload = () => {
@@ -80,6 +96,14 @@
         default:
           unityInstance.SendMessage('BattleScene', 'ReceivedBrowserData', 1);
           break;
+=======
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        container.className = "unity-mobile";
+        config.devicePixelRatio = 1;
+      } else {
+        canvas.style.width = "1080px";
+        canvas.style.height = "640px";
+>>>>>>> fc7d898bed34adf41d09812e2747add5c145abf5
       }
     };
 
